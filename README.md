@@ -1,5 +1,10 @@
 # sparklyGiiLD
-GiiLD repository for spark functions that are useful and save time writing boilerplate stuff
+GiiLD repository for spark functions.
 
-http://www.giild.com
-http://www.giild.net
+### Overview
+
+This is a collection of functions for Spark that make it easy to use from Spark shell. 
+
+### GiiLD website
+[GiiLD.com](http://www.giild.com)
+[GiiLD.net](http://www.giild.net)
