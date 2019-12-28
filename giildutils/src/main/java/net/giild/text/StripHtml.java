@@ -17,7 +17,9 @@ public class StripHtml implements Function<String,String> {
 		text = text.replace(".", "");
 		text = text.replace("?", "");
 		text = text.replaceAll("&nbsp;", " ");
+		text = text.replaceAll("&#39;", "\'");
 		text = text.replaceAll("\"", "");
+		text = text.replaceAll("\"\"", "");
 		text = text.replace("\\s+", " ");
 		return text;
 	}
