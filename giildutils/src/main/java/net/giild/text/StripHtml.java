@@ -8,6 +8,7 @@ public class StripHtml implements Function<String,String> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public StripHtml() {}
 
 	@Override
 	public String call(String text) throws Exception {
