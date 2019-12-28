@@ -15,5 +15,7 @@ In this example, contents would be the dataframe with 1 or more rows of text dat
 
 ### GiiLD website
 [GiiLD.com](http://www.giild.com)
+
 [GiiLD.net](http://www.giild.net)
-[http://dev.giild.net/entry-full/6a33f78f-3f6a-4710-9b98-fa616b552963](blog entry explaining how to use it and why I wrote it)
+
+[http://dev.giild.net/entry-full/6a33f78f-3f6a-4710-9b98-fa616b552963] (blog entry explaining how to use it and why I wrote it)
