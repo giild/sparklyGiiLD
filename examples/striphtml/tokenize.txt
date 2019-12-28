@@ -1,0 +1,18 @@
+:require giildutils.jar
+import net.giild.text.{StripHtml,StopWord}
+import scala.Tuple2
+import org.apache.spark.sql.functions.{concat,lit}
+val path = "sample_data.json"
+val dataset = spark.read.json(spark.sparkContext.wholeTextFiles(path).values)
+val rawdata = dataset.select(concat(col("title"), lit(" "), col("content")))
+val sanitized = rawdata.map(x => new StripHtml().call(x.getString(0)))
+sanitized.show()
+val words = sanitized.flatMap(x => x.split(" "))
+val stop = words.map(x => new StopWord("english_stop.txt"))
+stop.show()
+val counts = stop.map(word => (word,1))
+counts.show()
+val grouped = counts.groupBy("_1")
+grouped.count.show()
+val sorted = grouped.count.sort(col("count").desc)
+sorted.write.format("csv").save("tokens")

@@ -1,0 +1,9 @@
+:require giildutils.jar
+import net.giild.text.{StripHtml,StopWord}
+import scala.Tuple2
+import org.apache.spark.sql.functions.{concat,lit}
+val path = "sample_data.json"
+val dataset = spark.read.json(spark.sparkContext.wholeTextFiles(path).values)
+val rawdata = dataset.select(concat(col("title"), lit(" "), col("content")))
+val sanitized = rawdata.map(x => new StripHtml().call(x.getString(0)))
+sanitized.show()

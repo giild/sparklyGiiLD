@@ -46,19 +46,15 @@ public class StopWord implements Function<String,String> {
 				log.warning(e.getMessage());
 			}
 		}
-		log.warning("stop word cout: " + this.blockwords.size());
 	}
 	
 	@Override
 	public String call(String text) throws Exception {
-		for (String b: this.blockwords) {
-			text = text.replace(b, "");
+		if (this.blockwords.contains(text)) {
+			return "";
+		} else {
+			return text;
 		}
-		text = text.replace("\\s+", " ");
-		if (text == null) {
-			text = "";
-		}
-		return text;
 	}
 
 }

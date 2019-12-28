@@ -12,6 +12,7 @@ public class StripHtml implements Function<String,String> {
 
 	@Override
 	public String call(String text) throws Exception {
+		text = text.toLowerCase();
 		text = text.replaceAll("</?\\s*[A-Za-z]*[^>]*>", " ");
 		text = text.replace(",", "");
 		text = text.replace(".", "");
